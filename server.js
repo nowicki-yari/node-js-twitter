@@ -5,7 +5,7 @@ var http = require('http');
 const needle = require("needle");
 const express = require("express");
 const cors = require('cors')
-
+const api_key = "2e60b5c63eb37f3d1e6143be7d6c3eb6"
 const app = express();
 app.use(cors())
 // this is the ID for @TwitterDev
@@ -77,11 +77,13 @@ const getPage = async (params, options, nextToken) => {
 	}
 }
 
-
-
-app.get("/", async (req, res) => {
-	const result = await getUserTweets();
-	res.send(result)
+app.get("/:key", async (req, res) => {
+	if (req.params.key == api_key) {
+		const result = await getUserTweets();
+		res.send(result)
+	} else {
+		res.send('Error: Wrong API key');
+	}
 
 });
 app.listen(3000);
