@@ -5,7 +5,7 @@ var http = require('http');
 const needle = require("needle");
 const express = require("express");
 const cors = require('cors')
-const api_key = "2e60b5c63eb37f3d1e6143be7d6c3eb6"
+const api_key = ""
 const app = express();
 app.use(cors())
 // this is the ID for @TwitterDev
@@ -30,7 +30,7 @@ const getUserTweets = async () => {
 	const options = {
 		headers: {
 			"User-Agent": "v2UserTweetsJS",
-			"authorization": "Bearer AAAAAAAAAAAAAAAAAAAAACphWQEAAAAARO%2F4tVH1v0qvNd%2FvnVzhgupr3FI%3Dzn7xz2Oq7vBf5zjfz3gbGei2Hy01P4XuQLRFK3LoqmU0AVU8Bv"
+			"authorization": ""
 		}
 	}
 
